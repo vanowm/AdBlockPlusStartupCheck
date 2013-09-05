@@ -1,0 +1,2 @@
+content abpsit content/
+overlay chrome://browser/content/browser.xul chrome://abpsit/content/abpsit.xul

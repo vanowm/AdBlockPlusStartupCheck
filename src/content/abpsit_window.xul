@@ -5,8 +5,8 @@
         windowtype="startupdelay"
         buttons=","
         onload="init()"
-        onunload="t.cancel();"
-        style="background:white !important; color: black !important; -moz-appearance:none !important;"
+        onunload="t.cancel()"
+        style="background:white !important; color: black !important; border: 1px solid black !important; -moz-appearance:none !important;"
 >
 	<vbox align="center">
 		<label>Please wait</label>

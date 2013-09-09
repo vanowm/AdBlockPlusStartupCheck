@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="startupDelay" title="Delay Startup" 
+        windowtype="startupdelay"
+        buttons=","
+        onload="init()"
+        onunload="t.cancel();"
+        style="background:white !important; color: black !important; -moz-appearance:none !important;"
+>
+	<vbox align="center">
+		<label>Please wait</label>
+		<label>Continue in <label id="countdown"></label></label>
+	</vbox>
+	<script type="application/javascript">
+		var t = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer),
+				c = 6;
+		function display()
+		{
+			if (!--c)
+				window.close();
+
+			document.getElementById("countdown").value = c;
+		}
+		function init()
+		{
+			display();
+			t.init({observe: display}, 1000, t.TYPE_REPEATING_SLACK);
+		}
+	</script>
+</dialog>

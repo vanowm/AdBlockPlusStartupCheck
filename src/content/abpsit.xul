@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	<script type="application/javascript">
-		Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
-			.getService(Components.interfaces.nsIPromptService)
-			.alert(null, "Please wait", "Please wait at least 5 seconds before closing this");
+		Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
+			.getService(Components.interfaces.nsIWindowWatcher)
+			.openWindow(null, "chrome://abpsit/content/abpsit_window.xul", null, "chrome,modal,centerscreen,titlebar=no", null);
 	</script>
 </overlay>
